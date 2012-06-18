@@ -30,7 +30,7 @@ class KanbaneryController < ApplicationController
   def build_task(issue)
     task = {}
     task[:title] = issue.subject
-    description = issue_url(issue)
+		description = ''
     description << "\n\n#{issue.description}" if issue.description.present?
     task[:description] = description
     task[:task_type_name] = case issue.tracker.name
