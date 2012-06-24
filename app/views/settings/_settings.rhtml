@@ -16,3 +16,10 @@
   <br />
   <%= content_tag(:span, l(:kanbanery_settings_label_project_help)) %>
 </p>
+
+<p>
+  <%= content_tag(:label, l(:kanbanery_settings_label_authtoken)) %>
+  <%= text_field_tag("settings[auth_token]", @settings['auth_token']) %>
+  <br />
+  <%= content_tag(:span, l(:kanbanery_settings_label_token_help)) %>
+</p>
