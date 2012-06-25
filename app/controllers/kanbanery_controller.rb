@@ -46,9 +46,7 @@ class KanbaneryController < ApplicationController
     if request.delete? and params[:resource][:type] == "Task"
       task_id = params[:resource][:id]
       kanban_issue = KanbaneryIssue.find_by_task_id( task_id )
-      if kanban_issue != nil
-        kanban_issue.destroy
-      end
+      kanban_issue.destroy if kanban_issue
     end
 
 		# если post запрос то только комментарии
@@ -61,11 +59,10 @@ class KanbaneryController < ApplicationController
 
 			if user != nil
 
-				# ищем редмайн тикет
-				kanbanery = KanbaneryIssue.find_by_task_id(task_id)
-				if kanbanery == nil
-					return
-				end
+		    # ищем редмайн тикет
+			  kanbanery = KanbaneryIssue.find_by_task_id(task_id)
+        return unless kanbanery
+
 				@issue = Issue.find( kanbanery.issue_id )
 
 				comment = params[:resource][:body]
@@ -112,9 +109,7 @@ class KanbaneryController < ApplicationController
           @issue.assigned_to_id = owner_user.id
 				end
 
-				if status != nil 
-					@issue.status_id = status.id 
-				end
+        @issue.status_id = status.id if status
 				
 				@issue.save
 			end
