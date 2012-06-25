@@ -85,10 +85,10 @@ class KanbaneryController < ApplicationController
 			task_id = params[:resource][:id]
 
       # владелец
-			owner_user = KanbaneryUser::get_user( params[:resource][:owner_id] )
+			owner_user = KanbaneryUser::get_user( params[:resource][:owner_id].to_i )
 
       # кто совершил действие
-      user = KanbaneryUser::get_user( params[:user_id] )
+      user = KanbaneryUser::get_user( params[:user_id].to_i )
 
       if owner_user != nil
 				
