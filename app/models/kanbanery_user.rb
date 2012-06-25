@@ -46,7 +46,7 @@ class KanbaneryUser < ActiveRecord::Base
 		kanban_users = api.get_users()
 
 		kanban_users.each do |obj|
-			if obj['id'] == kanban_user_id
+			if obj['id'].to_i == kanban_user_id
 				return obj['email']
 			end
 		end
