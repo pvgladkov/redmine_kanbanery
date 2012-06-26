@@ -1,6 +1,8 @@
 class KanbaneryController < ApplicationController
   unloadable
 
+  # разрешаем обращаться к урлу /kanbanery/update без авторизации
+  # т.к. мы все равно проверяем ключ
   skip_filter :check_if_login_required, :only => :update
 
   #
