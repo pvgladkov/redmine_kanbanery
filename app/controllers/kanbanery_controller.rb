@@ -1,6 +1,8 @@
 class KanbaneryController < ApplicationController
   unloadable
 
+  skip_filter :check_if_login_required, :only => :update
+
   #
   # Запушить изменения тикета в канбанери
   #
