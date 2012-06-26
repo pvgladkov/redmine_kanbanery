@@ -139,11 +139,12 @@ class KanbaneryController < ApplicationController
 		
 		description << " \n\n#{issue.description}" if issue.description.present?
 		task[:description] = description
+=begin
 		task[:task_type_name] = case issue.tracker.name
 			when 'Feature' then 'Story'
 			else 'Bug'
 		end
-
+=end
 		# получим идентификатор колонки, которая соответсвует статусу
 		task[:column_id] = KanbaneryHelper::get_column_id( issue.status_id )
 		

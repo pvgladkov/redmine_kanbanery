@@ -1,5 +1,5 @@
 en:
-  button_kanbanery_push: "Push to Kanbanery"
+  button_kanbanery_push: "Kanbanery"
   kanbanery_settings_label_api_key: "Kanbanery API key"
   kanbanery_settings_label_workspace: "Kanbanery Workspace"
   kanbanery_settings_label_workspace_help: "The name of the workspace in kanbanery that owns the project specified below"
