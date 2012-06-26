@@ -10,7 +10,7 @@
 Выполнить:
   $ cd redmine/vendor/plugins 
   $ git clone https://github.com/webgeist/redmine_kanbanery.git
-  $ rake db:migrate:plugins PLUGIN=redmine_kanbanery RAILS_ENV=production
+  $ rake db:migrate:plugins PLUGIN=redmine_kanbanery
 
 В настройках kanbanery прописать url для "live update": {redmine host}/kanbanery/update
 
