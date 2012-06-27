@@ -1,4 +1,4 @@
-= redmine_kanbanery
+= Redmine Kanbanery Plugin
 
 == Сapabilities
 - Push issues from redmine to kanbanery (http://kanbanery.com)
