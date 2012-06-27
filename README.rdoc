@@ -3,17 +3,18 @@
 Плагин к redmine  для синхронизации с kanbanery (http://kanbanery.com)
 
 == Возможности
-Синхронизуируются движения тикетов по статусам и по ответственным.
+- Экспорт задач из redmine в kanbanery
+- Синхронизация статусов и ответственных между kanbanery и redmine
 
 == Установка
 Выполнить:
   $ cd redmine/vendor/plugins 
   $ git clone https://github.com/webgeist/redmine_kanbanery.git
-  $ rake db:migrate:plugins PLUGIN=redmine_kanbanery RAILS_ENV=production
+  $ rake db:migrate:plugins PLUGIN=redmine_kanbanery
 
 В настройках kanbanery прописать url для "live update": {redmine host}/kanbanery/update
 
-В redmine настроках плагина заполнить нужные поля.
+В redmine настройках плагина заполнить нужные поля.
 
 Названия колонок в kanbanery должны совпадать со статусам в redmine.
 
