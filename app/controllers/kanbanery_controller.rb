@@ -101,7 +101,7 @@ class KanbaneryController < ApplicationController
 				return unless kanbanery
 
         # узнаем в какую колонку перенесли
-        status = KanbaneryHelper::get_status( params[:resource][:column_id] )
+        status = KanbaneryHelper::get_status( params[:resource][:column_id], params[:resource][:position] )
 
 				issue = Issue.find( kanbanery.issue_id )
 
