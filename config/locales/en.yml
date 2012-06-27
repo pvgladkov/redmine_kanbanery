@@ -7,3 +7,4 @@ en:
   kanbanery_settings_label_project_help: "The project id in kanbanery that you want to push issues to"
   kanbanery_settings_label_authtoken: "Kanbanery auth. token"
   kanbanery_settings_label_token_help: ""
+  kanbanery_settings_label_closed_status: ""

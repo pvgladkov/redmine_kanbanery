@@ -14,6 +14,6 @@ Redmine::Plugin.register :redmine_kanbanery do
 
   permission :push_to_kanbanery, {:kanbanery => :push}
   settings :default => {
-      'api_key' => '', 'workspace_name' => '', 'project_id' => '', 'auth_token' => ''
+      'api_key' => '', 'workspace_name' => '', 'project_id' => '', 'auth_token' => '', 'closed_status_name' => ''
   }, :partial => 'settings/settings'
 end

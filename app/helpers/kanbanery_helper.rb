@@ -4,17 +4,31 @@ module KanbaneryHelper
 	# Получить стаутс редмайна по идентификатору колонки в канбане
  	#
 	def self.get_status( kanban_status_id )
-		
+
+    status = nil
+
 		column_id = kanban_status_id
 		api = KanbaneryAPI.new()
 
 		# тут мы получили инфу о колонке в канбанери
 		column = api.get_column(column_id)
-    return nil unless column
 
-		# а теперь найдем статус в редмайне по названию колонки
-		status = IssueStatus.find_by_name( column['name'] )
-		
+    # через апи не получили колонку по id
+    # возможная причина - таск перенесли в архив
+    if column == nil
+       # запросим архивные таски и если ответ не пустой посмотрим id этой колонки
+      archived_tasks = api.get_archived_tasks
+      if archived_tasks.count > 0
+        ar_column_id = archived_tasks[0]['column_id']
+        if ar_column_id.to_i == column_id.to_i
+          status = IssueStatus.find_by_name( Setting.plugin_redmine_kanbanery['closed_status_name'] )
+        end
+      end
+    else
+      # а теперь найдем статус в редмайне по названию колонки
+      status = IssueStatus.find_by_name( column['name'] )
+    end
+
 		return status
 	end
 	

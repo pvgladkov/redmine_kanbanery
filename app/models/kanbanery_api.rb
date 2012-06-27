@@ -101,5 +101,19 @@ class KanbaneryAPI
 		end
 		return users
 	end
-	
+
+  #
+  # Получить архивные таски
+  #
+  def get_archived_tasks()
+
+    tasks = Array.new()
+    url = "/projects/#{Setting.plugin_redmine_kanbanery['project_id']}/archive/tasks.json"
+    response = self.class.get( url )
+    if response.code == 200
+      tasks = response.parsed_response
+    end
+    return tasks
+  end
+
 end
