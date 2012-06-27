@@ -67,14 +67,14 @@ class KanbaneryController < ApplicationController
 			  kanbanery = KanbaneryIssue.find_by_task_id(task_id)
         return unless kanbanery
 
-				@issue = Issue.find( kanbanery.issue_id )
+				issue = Issue.find( kanbanery.issue_id )
 
 				comment = params[:resource][:body]
 
 				# процесс сохранения
-				@issue.init_journal( user, comment )
+				issue.init_journal( user, comment )
 
-				@issue.save
+				issue.save
 
 			end
 
@@ -103,19 +103,19 @@ class KanbaneryController < ApplicationController
         # узнаем в какую колонку перенесли
         status = KanbaneryHelper::get_status( params[:resource][:column_id] )
 
-				@issue = Issue.find( kanbanery.issue_id )
+				issue = Issue.find( kanbanery.issue_id )
 
         # процесс сохранения и логирования (какого юзера сюда вставлять?)
-        @issue.init_journal( user )
+        issue.init_journal( user )
 
 				# если сменился владелец
-				if @issue.assigned_to_id != owner_user.id
-          @issue.assigned_to_id = owner_user.id
+				if issue.assigned_to_id != owner_user.id
+          issue.assigned_to_id = owner_user.id
 				end
 
-        @issue.status_id = status.id if status
+        issue.status_id = status.id if status
 				
-				@issue.save
+				issue.save
 			end
 	  end
 	end
