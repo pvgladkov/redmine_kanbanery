@@ -88,6 +88,9 @@ class KanbaneryController < ApplicationController
 			
 			task_id = params[:resource][:id]
 
+      # хак от двойных запросов
+      return unless params[:resource][:position]
+
       # владелец
 			owner_user = KanbaneryUser::get_user( params[:resource][:owner_id].to_i )
 
@@ -101,7 +104,7 @@ class KanbaneryController < ApplicationController
 				return unless kanbanery
 
         # узнаем в какую колонку перенесли
-        status = KanbaneryHelper::get_status( params[:resource][:column_id], params[:resource][:position] )
+        status = KanbaneryHelper::get_status( params[:resource][:column_id] )
 
 				issue = Issue.find( kanbanery.issue_id )
 

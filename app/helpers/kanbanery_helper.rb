@@ -3,7 +3,7 @@ module KanbaneryHelper
 	# 
 	# Получить стаутс редмайна по идентификатору колонки в канбане
  	#
-	def self.get_status( kanban_status_id, pos )
+	def self.get_status( kanban_status_id )
 
     status = nil
 
@@ -20,7 +20,7 @@ module KanbaneryHelper
       archived_tasks = api.get_archived_tasks
       if archived_tasks.count > 0
         ar_column_id = archived_tasks[0]['column_id']
-        if (ar_column_id.to_i == column_id.to_i && pos != nil )
+        if ar_column_id.to_i == column_id.to_i
           status = IssueStatus.find_by_name( Setting.plugin_redmine_kanbanery['closed_status_name'] )
         end
       end
