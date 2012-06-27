@@ -10,6 +10,7 @@ module KanbaneryHelper
 
 		# тут мы получили инфу о колонке в канбанери
 		column = api.get_column(column_id)
+    return nil unless column
 
 		# а теперь найдем статус в редмайне по названию колонки
 		status = IssueStatus.find_by_name( column['name'] )
