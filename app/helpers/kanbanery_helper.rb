@@ -20,6 +20,7 @@ module KanbaneryHelper
       archived_tasks = api.get_archived_tasks
       if archived_tasks.count > 0
         ar_column_id = archived_tasks[0]['column_id']
+        # и если таск перенесли как-раз в эту колонку
         if ar_column_id.to_i == column_id.to_i
           status = IssueStatus.find_by_name( Setting.plugin_redmine_kanbanery['closed_status_name'] )
         end
