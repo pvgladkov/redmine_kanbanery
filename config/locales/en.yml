@@ -8,3 +8,4 @@ en:
   kanbanery_settings_label_authtoken: "Kanbanery auth. token"
   kanbanery_settings_label_token_help: ""
   kanbanery_settings_label_closed_status: ""
+  kanbanery_settings_label_closed_status_help: ""
