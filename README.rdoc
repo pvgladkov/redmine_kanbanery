@@ -1,6 +1,23 @@
-= redmine_kanbanery
+= Redmine Kanbanery Plugin
 
-Плагин к redmine  для синхронизации с kanbanery (http://kanbanery.com)
+== Сapabilities
+- Push issues from redmine to kanbanery (http://kanbanery.com)
+- Two-way synchronization between Kanbanery Issues and Redmine tickets (status and assigned to)
+
+== Setup
+Run:
+  $ cd redmine/vendor/plugins 
+  $ git clone https://github.com/webgeist/redmine_kanbanery.git
+  $ rake db:migrate:plugins PLUGIN=redmine_kanbanery
+
+Kanbanery -> Settings -> URL Live Update: {redmine host}/kanbanery/update
+
+Fill required fields in plugins settings in redmine
+
+Column names should match with issue statuses  
+
+Users should have same emails in redmine and kanbanery
+
 
 == Возможности
 - Экспорт задач из redmine в kanbanery
@@ -14,8 +31,8 @@
 
 В настройках kanbanery прописать url для "live update": {redmine host}/kanbanery/update
 
-В redmine настройках плагина заполнить нужные поля.
+В redmine настройках плагина заполнить нужные поля
 
-Названия колонок в kanbanery должны совпадать со статусам в redmine.
+Названия колонок в kanbanery должны совпадать со статусам в redmine
 
-Пользователи в kanbanery и в redmine должны иметь одинаковые email'ы.
+Пользователи в kanbanery и в redmine должны иметь одинаковые email'ы
