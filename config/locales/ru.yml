@@ -8,6 +8,7 @@ ru:
   kanbanery_settings_label_update: "Задача обновлена в Kanbanery"
   kanbanery_settings_label_push: "Задача отправлена в Kanbanery"
   kanbanery_settings_label_authtoken: "Kanbanery auth. token"
+  kanbanery_settings_label_authtoken_2: "Kanbanery auth. token No2"
   kanbanery_settings_label_token_help: "Для авторизации запросов от Kanbanery"
   kanbanery_settings_label_closed_status: "Статус для архивных тасков"
   kanbanery_settings_label_closed_status_help: "имя статуса в redmine"

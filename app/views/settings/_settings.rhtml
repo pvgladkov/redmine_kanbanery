@@ -25,6 +25,13 @@
 </p>
 
 <p>
+  <%= content_tag(:label, l(:kanbanery_settings_label_authtoken_2)) %>
+  <%= text_field_tag("settings[auth_token_2]", @settings['auth_token_2']) %>
+  <br />
+  <%= content_tag(:span, l(:kanbanery_settings_label_token_help)) %>
+</p>
+
+<p>
   <%= content_tag(:label, l(:kanbanery_settings_label_closed_status)) %>
   <%= text_field_tag("settings[closed_status_name]", @settings['closed_status_name']) %>
   <br />

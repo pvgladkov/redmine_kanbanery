@@ -42,7 +42,7 @@ class KanbaneryController < ApplicationController
   def update
 
     # принимаем только авторизованные запросы
-    if  params[:auth_token] != Setting.plugin_redmine_kanbanery['auth_token']
+    if  params[:auth_token] != Setting.plugin_redmine_kanbanery['auth_token'] and params[:auth_token] != Setting.plugin_redmine_kanbanery['auth_token_2']
       return
     end
 
