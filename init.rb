@@ -1,4 +1,5 @@
 require 'redmine'
+require 'rubygems'
 require 'httparty'
 
 require_dependency 'kanbanery/hooks'

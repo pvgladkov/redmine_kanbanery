@@ -1,6 +1,6 @@
 class KanbaneryAPI
   include HTTParty
-  include ActionController::UrlWriter
+  #include ActionController::UrlWriter
 
   def initialize()
     self.class.default_params :api_token => Setting.plugin_redmine_kanbanery['api_key']
