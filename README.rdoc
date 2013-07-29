@@ -2,7 +2,8 @@
 
 == Сapabilities
 - Push issues from redmine to kanbanery (http://kanbanery.com)
-- Two-way synchronization between Kanbanery Issues and Redmine tickets (status and assigned to)
+- Two-way synchronization between Kanbanery Issues and Redmine 2.x tickets (status and assigned to)
+For Redmine 1.x use https://github.com/webgeist/redmine_kanbanery/tree/redmine1x
 
 == Setup
 Run:
@@ -21,7 +22,8 @@ Users should have same emails in redmine and kanbanery
 
 == Возможности
 - Экспорт задач из redmine в kanbanery
-- Синхронизация статусов и ответственных между kanbanery и redmine
+- Синхронизация статусов и ответственных между kanbanery и redmine 2.x
+Для Redmine 1.x используйте https://github.com/webgeist/redmine_kanbanery/tree/redmine1x
 
 == Установка
 Выполнить:
