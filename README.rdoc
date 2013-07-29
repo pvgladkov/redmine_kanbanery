@@ -6,7 +6,7 @@
 
 == Setup
 Run:
-  $ cd redmine/vendor/plugins 
+  $ cd redmine/plugins 
   $ git clone https://github.com/webgeist/redmine_kanbanery.git
   $ rake db:migrate:plugins PLUGIN=redmine_kanbanery
 
