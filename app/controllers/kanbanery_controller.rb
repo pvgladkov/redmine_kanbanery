@@ -1,5 +1,8 @@
 class KanbaneryController < ApplicationController
   unloadable
+  
+  # разрешаем обращаться к урлу /kanbanery/update без CSRF
+  skip_before_filter :verify_authenticity_token, :only => :update
 
   # разрешаем обращаться к урлу /kanbanery/update без авторизации
   # т.к. мы все равно проверяем ключ
