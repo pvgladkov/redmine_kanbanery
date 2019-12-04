@@ -7,7 +7,7 @@
 == Setup
 Run:
   $ cd redmine/vendor/plugins 
-  $ git clone https://github.com/webgeist/redmine_kanbanery.git
+  $ git clone https://github.com/pvgladkov/redmine_kanbanery.git
   $ rake db:migrate:plugins PLUGIN=redmine_kanbanery
 
 Kanbanery -> Settings -> URL Live Update: {redmine host}/kanbanery/update
@@ -26,7 +26,7 @@ Users should have same emails in redmine and kanbanery
 == Установка
 Выполнить:
   $ cd redmine/vendor/plugins 
-  $ git clone https://github.com/webgeist/redmine_kanbanery.git
+  $ git clone https://github.com/pvgladkov/redmine_kanbanery.git
   $ rake db:migrate:plugins PLUGIN=redmine_kanbanery
 
 В настройках kanbanery прописать url для "live update": {redmine host}/kanbanery/update
